@@ -14,7 +14,8 @@
 
 ## Видео-Автоматизация (Workflow & Task 2)
 Для подробного описания процессов автоматизации и инструкций по развертыванию перейдите в папку `task2/`:
-- [README.md](file:///e:/Teach/Scelar/Scelar2026/MyScripts/task2/README.md) - **Главная документация Task 2** (English).
+- [README_RU.md](file:///e:/Teach/Scelar/Scelar2026/MyScripts/task2/README_RU.md) - **Главная документация Task 2** (Русский).
+- [README.md](file:///e:/Teach/Scelar/Scelar2026/MyScripts/task2/README.md) - Documentation for Task 2 (English).
 - [C4_Architecture.md](file:///e:/Teach/Scelar/Scelar2026/MyScripts/task2/C4_Architecture.md) - Архитектурная документация (C4 Model).
 - [C4_ComfyUI.md](file:///e:/Teach/Scelar/Scelar2026/MyScripts/task2/C4_ComfyUI.md) - Архитектурная документация для интеграции с ComfyUI.
 - [C4_Advanced_AI.md](file:///e:/Teach/Scelar/Scelar2026/MyScripts/task2/C4_Advanced_AI.md) - Архитектура продвинутых ИИ-сервисов.
