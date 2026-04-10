@@ -1,61 +1,31 @@
-# Advanced Video Automation Toolkit (Task 2)
+# Motion Design Automation: File Manifest (Task 1 & Task 2)
 
-A collection of professional automation tools for After Effects and AI-driven content creation, designed for senior-level workflows.
-
-## 🚀 Key Features
-
-### 1. Hook Swapper & Variations
-- **hook_swapper.jsx**: Automatically creates multiple video variations by swapping different 3-5s "Hooks" with a "Master Body" (CTA).
-- **hook_generator.py**: Uses OpenAI/GPT-4o to analyze transcriptions and generate 5 high-converting headlines and visual descriptions for hooks.
-
-### 2. Localization Pipeline
-- **localization_pipeline.jsx**: Generates localized video versions based on a CSV configuration.
-- **tts_generator.py**: Integrates with ElevenLabs API to generate emotional, multi-lingual voiceovers for the localization pipeline.
-
-### 3. AI Quality Enhancement
-- **video_upscale.py**: Uses **Real-ESRGAN** for state-of-the-art frame-by-frame upscaling of low-quality UGC clips to 4K.
-- **comfy_bridge.py**: Connects After Effects to a local or remote **ComfyUI** instance for generative AI tasks (outpainting, stylization).
+This document provides a concise description of all scripts and tools developed for both tasks.
 
 ---
 
-## 🏗 Architecture (C4 Model)
-For detailed technical documentation and diagrams, see:
-- [C4_Architecture.md](C4_Architecture.md) - Core system and container diagrams.
-- [C4_ComfyUI.md](C4_ComfyUI.md) - Deep dive into ComfyUI integration.
-- [C4_Advanced_AI.md](C4_Advanced_AI.md) - Integration of LLMs, TTS, and Real-ESRGAN.
+## 🛠 Task 1: AutoSub & Image Enhancement
+*Located in the root directory.*
+
+- **AutoSub_Reels.jsx**: After Effects ScriptUI panel for importing SRT subtitles with word-by-word splitting and "Reels-style" animations.
+- **transcribe.py**: Python script using OpenAI Whisper for high-accuracy speech-to-text transcription (outputs .srt).
+- **Transcribe_Video.bat**: Windows batch file for easy drag-and-drop video transcription.
+- **generate_icon.py**: Utility script to generate a professional .ico file for the batch script.
+- **ai_upscale.py**: Image upscaling tool using OpenCV DNN (EDSR/ESPCN models) to enhance photos to 4K.
+- **ai_outpaint.py**: Image resizing tool using Stability AI API to expand 9:16 portrait images to 16:9 landscape.
 
 ---
 
-## 🛠 Installation & Setup
+## 🚀 Task 2: Video Automation & Advanced AI
+*Located in the `task2/` directory.*
 
-### Prerequisites
-1. **Adobe After Effects** (Any recent version)
-2. **Python 3.10+**
-3. **ComfyUI** (Optional, for advanced generative tasks)
-
-### Python Dependencies
-```bash
-pip install requests openai websocket-client pandas torch basicsr realesrgan opencv-python
-```
-
-### Installation
-1. Move `.jsx` files to your After Effects `Scripts/ScriptUI Panels` folder.
-2. Restart After Effects.
-3. Access tools via the `Window` menu.
-
----
-
-## 📖 Detailed Guides
-- [DEPLOYMENT_RU.md](DEPLOYMENT_RU.md) - Инструкция по развертыванию (Russian).
-- [DEPLOYMENT_EN.md](DEPLOYMENT_EN.md) - Deployment Guide (English).
-- [WORKFLOWS.md](WORKFLOWS.md) - Професійний опис воркфлоу (Ukrainian).
-
----
-
-## 👨‍💻 Senior Recommendations
-- **Dynamic Assets**: Always use absolute paths in CSV configurations to avoid import errors.
-- **AI Safety**: Store API keys in environment variables or a secure `.env` file instead of hardcoding them.
-- **Scalability**: For large batches, use the `video_upscale.py` script on a dedicated GPU server for better performance.
+- **hook_swapper.jsx**: After Effects script that automatically generates video variations by swapping different 3-5s "Hooks" with a "Master Body".
+- **localization_pipeline.jsx**: Automated render pipeline that creates localized versions of a project based on a CSV table (text & voiceover).
+- **hook_generator.py**: AI-powered script using GPT-4o to analyze transcriptions and generate 5 viral hook headlines.
+- **tts_generator.py**: Professional voiceover generator using ElevenLabs API (supports 29 languages).
+- **video_upscale.py**: Advanced video frame upscaler using **Real-ESRGAN** for superior 4K quality.
+- **comfy_bridge.py**: API Bridge to connect After Effects with a local/remote ComfyUI instance.
+- **comfy_workflow.json**: Sample JSON configuration for ComfyUI API tasks (outpainting/styling).
 
 ---
 © 2026 Motion Design Automation Suite
