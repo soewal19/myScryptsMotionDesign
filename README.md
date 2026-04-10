@@ -15,6 +15,7 @@
 ## Видео-Автоматизация (Workflow & Task 2)
 Для подробного описания процессов автоматизации и инструкций по развертыванию перейдите в папку `task2/`:
 - [C4_Architecture.md](file:///e:/Teach/Scelar/Scelar2026/MyScripts/task2/C4_Architecture.md) - Архитектурная документация (C4 Model).
+- [C4_ComfyUI.md](file:///e:/Teach/Scelar/Scelar2026/MyScripts/task2/C4_ComfyUI.md) - Архитектурная документация для интеграции с ComfyUI.
 - [DEPLOYMENT_RU.md](file:///e:/Teach/Scelar/Scelar2026/MyScripts/task2/DEPLOYMENT_RU.md) - Инструкция по развертыванию (Русский).
 - [DEPLOYMENT_EN.md](file:///e:/Teach/Scelar/Scelar2026/MyScripts/task2/DEPLOYMENT_EN.md) - Deployment Guide (English).
 
