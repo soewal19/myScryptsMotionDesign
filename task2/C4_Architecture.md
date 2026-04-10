@@ -12,11 +12,13 @@ graph TD
     AE[Adobe After Effects]
     FS[(File System)]
     AI[AI Services: Whisper/GPT-4/ElevenLabs]
+    Comfy[ComfyUI Node-based Backend]
 
     User -->|Configures & Runs| System
     System -->|Controls| AE
     System -->|Reads/Writes| FS
     System -.->|Pre-processing| AI
+    System -.->|Advanced Generative| Comfy
 ```
 
 - **Users**: Video Editors, Creative Strategists.
@@ -24,6 +26,7 @@ graph TD
 - **External Dependencies**: 
   - Adobe After Effects (Execution Environment).
   - File System (Media assets, CSV configs).
+  - **ComfyUI**: Advanced Node-based AI backend for outpainting and video styling.
   - *Optional AI*: OpenAI Whisper (for pre-processing transcription), ElevenLabs (for pre-processing TTS).
 
 ---

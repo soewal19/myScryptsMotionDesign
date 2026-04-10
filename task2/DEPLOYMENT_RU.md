@@ -42,6 +42,16 @@
 4. Введите точное имя вашей мастер-композиции.
 5. Нажмите **GENERATE LOCALIZED VERSIONS**.
 
+## Шаг 4: Настройка ComfyUI (Advanced)
+Для продвинутой генерации и стилизации видео:
+1. Установите [ComfyUI](https://github.com/comfyanonymous/ComfyUI).
+2. Установите зависимости для бриджа:
+   ```bash
+   pip install websocket-client
+   ```
+3. Запустите ComfyUI с флагом `--enable-cors-header`.
+4. Используйте `comfy_bridge.py` для отправки задач из After Effects. Скрипт автоматически загружает воркфлоу из `comfy_workflow.json` и возвращает результат.
+
 ---
 
 ## Рекомендации Senior разработчика:
