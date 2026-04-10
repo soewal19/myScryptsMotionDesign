@@ -1,9 +1,23 @@
-# C4 Architecture Documentation: AI Image Toolkit
+# C4 Architecture: AI Image Toolkit
 
-This document provides a professional architectural overview of the AI Image Toolkit using the C4 model.
+This document provides a professional architectural overview of the AI Image Toolkit using the C4 model with Mermaid visualizations.
 
 ## 1. System Context Diagram (Level 1)
 The AI Image Toolkit is a specialized utility suite for content creators (Social Media Managers, Video Editors).
+
+```mermaid
+graph TD
+    User((Content Creator))
+    System[AI Image Toolkit]
+    Stability[Stability AI Cloud API]
+    OpenCV[OpenCV DNN Models]
+    FS[(File System)]
+
+    User -->|Runs Scripts| System
+    System -->|Generative Tasks| Stability
+    System -->|Deterministic Upscaling| OpenCV
+    System -->|Reads/Writes Images| FS
+```
 
 - **Users**: Content Creators, Video Editors, Developers.
 - **External Systems**:
@@ -14,6 +28,26 @@ The AI Image Toolkit is a specialized utility suite for content creators (Social
 
 ## 2. Container Diagram (Level 2)
 The toolkit consists of two primary processing containers.
+
+```mermaid
+graph LR
+    subgraph Local_Process [Local Machine]
+        US[AI Upscale Script]
+        OP[AI Outpaint Script]
+    end
+    
+    FS[(Local Images)] --> US
+    FS --> OP
+    
+    OP -->|Secure API Request| Stability[Stability AI API]
+    US -->|Local Inference| OpenCV[OpenCV DNN Engine]
+    
+    Stability -->|Base64 Artifacts| OP
+    OpenCV -->|Processed Image| US
+    
+    US -->|Saves 4K| FS
+    OP -->|Saves 16:9| FS
+```
 
 - **AI Upscale Container (Local)**:
   - Language: Python
@@ -30,11 +64,39 @@ The toolkit consists of two primary processing containers.
 Internal components of each processing container.
 
 ### AI Upscale Components:
+```mermaid
+graph TD
+    CLI[CLI Handler]
+    ML[Model Loader]
+    DE[DNN Engine]
+    IP[Image Processor]
+
+    CLI -->|Params| ML
+    CLI -->|Path| IP
+    ML -->|Model Config| DE
+    IP -->|Input Tensor| DE
+    DE -->|Output Tensor| IP
+```
+
 1. **Model Loader**: Validates and loads `.pb` model files from the `models/` directory.
 2. **DNN Engine**: Performs the actual neural network inference for upscaling.
 3. **Image Processor**: Handles reading/writing images and color space conversions.
 
 ### AI Outpaint Components:
+```mermaid
+graph TD
+    CLI_OP[CLI Handler]
+    DC[Dimension Calculator]
+    AC[API Client]
+    AP[Artifact Processor]
+
+    CLI_OP -->|Input Size| DC
+    DC -->|Padding Data| AC
+    CLI_OP -->|API Key| AC
+    AC -->|API Call| Stability[Stability AI]
+    Stability -->|JSON Response| AP
+```
+
 1. **Dimension Calculator**: Computes target 16:9 padding from 9:16 input.
 2. **API Client**: Handles authentication and multipart/form-data requests.
 3. **Artifact Processor**: Decodes Base64 response artifacts and saves output.
