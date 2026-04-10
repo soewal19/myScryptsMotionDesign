@@ -9,6 +9,14 @@
 4. **autosub.ico** - Профессиональная иконка для инструментов.
 5. **ai_upscale.py** - Скрипт для ИИ-апскейлинга изображений до 4K.
 6. **ai_outpaint.py** - Скрипт для ИИ-ресайзинга (outpainting) 9:16 -> 16:9.
+7. **hook_swapper.jsx** - Автоматическая сборка вариаций видео с разными хуками (в папке task2).
+8. **localization_pipeline.jsx** - Автоматизация локализации на основе CSV-таблиц (в папке task2).
+
+## Видео-Автоматизация (Workflow & Task 2)
+Для подробного описания процессов автоматизации и инструкций по развертыванию перейдите в папку `task2/`:
+- [C4_Architecture.md](file:///e:/Teach/Scelar/Scelar2026/MyScripts/task2/C4_Architecture.md) - Архитектурная документация (C4 Model).
+- [DEPLOYMENT_RU.md](file:///e:/Teach/Scelar/Scelar2026/MyScripts/task2/DEPLOYMENT_RU.md) - Инструкция по развертыванию (Русский).
+- [DEPLOYMENT_EN.md](file:///e:/Teach/Scelar/Scelar2026/MyScripts/task2/DEPLOYMENT_EN.md) - Deployment Guide (English).
 
 ## AI Image Tools (Advanced)
 Для работы с ИИ-инструментами (апскейлинг и ресайзинг) ознакомьтесь с отдельной документацией на английском языке:
